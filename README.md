@@ -31,7 +31,7 @@ If you're new to Twilio, your free trial's home screen should include your trial
 
 ![](extras/twilio_home_project_details.png)
 
-Also, please note that with a free Twilio trial account, you can only call to numbers that have been verified as belonging to you. So if you're using a trial account, be sure to [verify all numbers](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account#verify-your-personal-phone-number) you want to test with before trying to call them.
+**Important:** please note that with a free Twilio trial account, you can only call to numbers that have been verified as belonging to you. So if you're using a trial account, be sure to [verify all numbers](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account#verify-your-personal-phone-number) you want to test with before trying to call them. This includes the number you will call from. If you do not verify both the `fromNumber` and `toNumber`, you will get a status 400 error when trying to make a call.
 
 ![](extras/twilio_verified_numbers.png)
 
