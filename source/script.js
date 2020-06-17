@@ -1,198 +1,201 @@
+/* global getPluginParameter, getMetaData, setMetaData, setAnswer */
+
 // References to field elements
-var fromNumberField = document.getElementById("fromNumber");
-var toNumberField = document.getElementById("toNumber");
-var dialBtn = document.getElementById("dial");
-var updateStatusBtn = document.getElementById("updateStatus");
-var sidField = document.getElementById("sid");
-var statusField = document.getElementById("status");
+var fromNumberField = document.getElementById('fromNumber')
+var toNumberField = document.getElementById('toNumber')
+var dialBtn = document.getElementById('dial')
+var updateStatusBtn = document.getElementById('updateStatus')
+var sidField = document.getElementById('sid')
+var statusField = document.getElementById('status')
 
 // References to values stored in the plug-in parameters
-var authToken = getPluginParameter("authToken");
-var accountSID = getPluginParameter("accountSID");
-var fromNumber = getPluginParameter("fromNumber");
-var toNumber = getPluginParameter("toNumber");
-var twilioNumber = getPluginParameter("twilioNumber");
-var record = Number(getPluginParameter("record"));
-var displayNumber = Number(getPluginParameter("displayNumber"));
+var authToken = getPluginParameter('authToken')
+var accountSID = getPluginParameter('accountSID')
+var fromNumber = getPluginParameter('fromNumber')
+var toNumber = getPluginParameter('toNumber')
+var twilioNumber = getPluginParameter('twilioNumber')
+var record = Number(getPluginParameter('record'))
+var displayNumber = Number(getPluginParameter('displayNumber'))
 
-//other variables
-var rootUrl = "https://api.twilio.com";
-var callJSON;
-var callActive;
+var rootUrl = 'https://api.twilio.com'
+var callJSON
+var callActive
 
 // Define the dial function
 dialBtn.onclick = function () {
-  dial();
-};
-
-updateStatusBtn.onclick = function () {
-  updateStatus();
-};
-
-function makeHttpObject() {
-  try {
-    return new XMLHttpRequest();
-  } catch (error) {}
-  try {
-    return new ActiveXObject("Msxml2.XMLHTTP");
-  } catch (error) {}
-  try {
-    return new ActiveXObject("Microsoft.XMLHTTP");
-  } catch (error) {}
-
-  throw new Error("Could not create HTTP request object.");
+  dial()
 }
 
-function postRequest(requestUrl, params) {
+updateStatusBtn.onclick = function () {
+  updateStatus()
+}
+
+onLoad()
+
+function makeHttpObject () {
+  try {
+    return new XMLHttpRequest()
+  } catch (error) { }
+  try {
+    return new ActiveXObject('Msxml2.XMLHTTP')
+  } catch (error) { }
+  try {
+    return new ActiveXObject('Microsoft.XMLHTTP')
+  } catch (error) { }
+
+  throw new Error('Could not create HTTP request object.')
+}
+
+function postRequest (requestUrl, params) {
   return new Promise(function (resolve, reject) {
-    let request = undefined;
+    let request
 
     try {
-      request = makeHttpObject();
+      request = makeHttpObject()
 
-      request.open("POST", requestUrl, true);
+      request.open('POST', requestUrl, true)
 
       request.setRequestHeader(
-        "Authorization",
+        'Authorization',
         `Basic ` +
-          btoa(unescape(encodeURIComponent(accountSID + ":" + authToken)))
-      );
+        btoa(unescape(encodeURIComponent(accountSID + ':' + authToken)))
+      )
       request.setRequestHeader(
-        "Content-type",
-        "application/x-www-form-urlencoded"
-      );
+        'Content-type',
+        'application/x-www-form-urlencoded'
+      )
 
       request.onreadystatechange = function () {
         if (request.readyState === 4) {
-          responseText = request.responseText;
+          responseText = request.responseText
 
-          callActive = true;
+          callActive = true
 
-          resolve(request.responseText);
+          resolve(request.responseText)
         }
-      };
+      }
 
-      request.send(params);
+      request.send(params)
     } catch (error) {
-      reject(error);
+      reject(error)
     }
-  });
+  })
 }
 
-function updateStatusField(value) {
-  statusField.innerHTML = value;
+function updateStatusField (value) {
+  statusField.innerHTML = value
 }
 
-async function updateStatus() {
-  let responseText = getMetaData();
+async function updateStatus () {
+  let responseText = getMetaData()
 
   if (!responseText) {
-    updateStatusField("The call metadata is undefined");
+    updateStatusField('The call metadata is undefined')
 
-    return false;
+    return false
   }
 
   try {
-    callJSON = JSON.parse(responseText);
+    callJSON = JSON.parse(responseText)
   } catch (error) {
-    updateStatusField("Response JSON not valid");
+    updateStatusField('Response JSON not valid')
 
-    return false;
+    return false
   }
 
   if (!callJSON.uri) {
-    updateStatusField("Status uri is undefined");
+    updateStatusField('Status uri is undefined')
 
-    return false;
+    return false
   }
 
-  responseText = await postRequest(rootUrl + callJSON.uri, []);
+  responseText = await postRequest(rootUrl + callJSON.uri, [])
 
   if (!responseText) {
-    updateStatusField("undefined error");
+    updateStatusField('undefined error')
 
-    return false;
+    return false
   }
 
-  setMetaData(responseText);
+  setMetaData(responseText)
 
-  processResponse(responseText);
+  processResponse(responseText)
 }
 
-async function dial() {
-  let responseText = "";
+async function dial () {
+  let responseText = ''
 
-  let requestUrl = `${rootUrl}/2010-04-01/Accounts/${accountSID}/Calls.json`;
+  let requestUrl = `${rootUrl}/2010-04-01/Accounts/${accountSID}/Calls.json`
 
-  let Twiml = `<Response><Dial record="${
-    record === 0 ? "do-not-record" : "record-from-ringing-dual"
-  }" answerOnBridge="true" callerId="${twilioNumber}">${toNumber}</Dial></Response>`;
+  let Twiml = `<Response><Dial record='${
+    record === 0 ? 'do-not-record' : 'record-from-ringing-dual'
+    }' answerOnBridge='true' callerId='${twilioNumber}'>${toNumber}</Dial></Response>`
 
-  let params = `From=${twilioNumber}&To=${fromNumber}&Twiml=${Twiml}`;
+  let params = `From=${twilioNumber}&To=${fromNumber}&Twiml=${Twiml}`
 
-  updateStatusField("Call attempted");
+  updateStatusField('Call attempted')
 
-  responseText = await postRequest(requestUrl, params);
+  responseText = await postRequest(requestUrl, params)
 
   if (!responseText) {
-    updateStatusField("undefined error");
+    updateStatusField('undefined error')
 
-    return false;
+    return false
   }
 
-  setMetaData(responseText);
+  setMetaData(responseText)
 
-  processResponse(responseText);
+  processResponse(responseText)
 }
 
-function onLoad() {
-  fromNumberField.innerHTML = fromNumber;
+function onLoad () {
+  fromNumberField.innerHTML = fromNumber
 
-  toNumberField.innerHTML = toNumber;
+  toNumberField.innerHTML = toNumber
 
   if (displayNumber === 0) {
-    toNumberField.innerHTML = "**********";
+    toNumberField.innerHTML = '**********'
   }
 
-  let responseText = getMetaData();
+  let responseText = getMetaData()
 
   if (!responseText) {
-    setDefault();
+    setDefault()
 
-    return false;
+    return false
   }
 
-  processResponse(responseText);
+  processResponse(responseText)
 }
 
-function setDefault() {
-  dialBtn.disabled = false;
+function setDefault () {
+  dialBtn.disabled = false
 
-  updateStatusBtn.disabled = true;
+  updateStatusBtn.disabled = true
 
-  sidField.innerHTML = "";
-  updateStatusField("Ready to call");
+  sidField.innerHTML = ''
+  updateStatusField('Ready to call')
 }
 
-function processResponse(responseText) {
-  dialBtn.disabled = false;
+function processResponse (responseText) {
+  dialBtn.disabled = false
 
-  updateStatusBtn.disabled = true;
+  updateStatusBtn.disabled = true
 
-  let dialJSON = undefined;
+  let dialJSON
 
   try {
-    dialJSON = JSON.parse(responseText);
+    dialJSON = JSON.parse(responseText)
   } catch (error) {
-    updateStatusField("Response JSON not valid");
+    updateStatusField('Response JSON not valid')
 
-    return false;
+    return false
   }
 
   if (!dialJSON.uri && dialJSON.status) {
-    updateStatusField(dialJSON.status);
+    updateStatusField(dialJSON.status)
 
-    return false;
+    return false
   }
 
   if (
@@ -201,31 +204,29 @@ function processResponse(responseText) {
     dialJSON.sid &&
     dialJSON.subresource_uris.recordings
   ) {
-    dialBtn.disabled = true;
-    updateStatusBtn.disabled = false;
+    dialBtn.disabled = true
+    updateStatusBtn.disabled = false
 
-    sidField.innerHTML = dialJSON.sid;
+    sidField.innerHTML = dialJSON.sid
 
-    updateStatusField(dialJSON.status);
+    updateStatusField(dialJSON.status)
 
-    let s = `${dialJSON.status}|${dialJSON.sid}|${rootUrl}${dialJSON.uri}|${rootUrl}${dialJSON.subresource_uris.recordings}`;
+    let s = `${dialJSON.status}|${dialJSON.sid}|${rootUrl}${dialJSON.uri}|${rootUrl}${dialJSON.subresource_uris.recordings}`
 
-    setAnswer(s);
+    setAnswer(s)
   } else {
-    updateStatusField("Response not valid");
+    updateStatusField('Response not valid')
 
-    setAnswer("Response not valid");
+    setAnswer('Response not valid')
   }
 }
 
-//global function
-function clearAnswer() {
-  //global
-  setAnswer("");
-  setMetaData("");
+// global function
+function clearAnswer () {
+  // global
+  setAnswer('')
+  setMetaData('')
 
-  //local
-  setDefault();
+  // local
+  setDefault()
 }
-
-onLoad();
