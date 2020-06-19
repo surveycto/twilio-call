@@ -1,7 +1,7 @@
 {
 	"name" : "Twilio Dialer",
 	"author" : "Team SurveyCTO",
-	"version": "1.0.13",
+	"version": "1.0.2",
 	"supportedFieldTypes": ["text"],
 	"hideDefaultRequiredMessage": false,
 	"hideDefaultConstraintMessage": false
