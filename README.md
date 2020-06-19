@@ -10,7 +10,7 @@ This plug-in allows for forms to launch outbound calls via [Twilio](https://twil
 
 ## Warning: under active development
 
-*This plug-in is still under active development and piloting, and there is no easy way (yet!) to decrypt encrypted audio recordings.*
+*This plug-in is still under active development and piloting, and there is no easy way (yet!) to decrypt encrypted audio recordings. If you're interested in piloting Twilio for CATI applications, please reach out to amrik@surveycto.com.*
 
 ## Features
 
