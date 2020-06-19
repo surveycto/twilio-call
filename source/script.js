@@ -1,3 +1,5 @@
+/* global getPluginParameter, getMetaData, setAnswer, setMetaData, XMLHttpRequest, ActiveXObject, btoa */
+
 // References to field elements
 var fromNumberField = document.getElementById('fromNumber')
 var toNumberField = document.getElementById('toNumber')
@@ -43,7 +45,6 @@ function updateStatusField (value) {
 }
 
 function updateStatus () {
-
   var responseText = getMetaData()
 
   if (!responseText) {
@@ -53,28 +54,23 @@ function updateStatus () {
   }
 
   try {
-
     callJSON = JSON.parse(responseText)
-
   } catch (error) {
-
     updateStatusField('Response JSON not valid')
 
     return false
   }
 
   if (!callJSON.uri) {
-
     updateStatusField('Status uri is undefined')
 
     return false
   }
 
-  var request = undefined
+  var request
   var requestUrl = rootUrl + callJSON.uri
 
   try {
-
     request = makeHttpObject()
 
     request.open('POST', requestUrl, true)
@@ -87,7 +83,6 @@ function updateStatus () {
 
         if (!responseText) {
           updateStatusField('undefined error')
-
         } else {
           setMetaData(responseText)
 
@@ -116,7 +111,6 @@ function dial () {
   updateStatusField('Call attempted')
 
   try {
-
     request = makeHttpObject()
 
     request.open('POST', requestUrl, true)
@@ -124,41 +118,31 @@ function dial () {
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
 
     request.onreadystatechange = function () {
-
       if (request.readyState === 4) {
-
         responseText = request.responseText
 
         if (!responseText) {
-
           updateStatusField('undefined error')
-
         } else {
-
           setMetaData(responseText)
 
           processResponse(responseText)
         }
-
       }
     }
 
     request.send(params)
-
   } catch (error) {
-
     updateStatusField(error)
-
   }
 }
 
 function onLoad () {
-
   fromNumberField.innerHTML = fromNumber
 
   toNumberField.innerHTML = toNumber
 
-  if (displayNumber === 0) { toNumberField.innerHTML = '**********'; }
+  if (displayNumber === 0) { toNumberField.innerHTML = '**********' }
 
   var responseText = getMetaData()
 
@@ -171,7 +155,6 @@ function onLoad () {
 }
 
 function setDefault () {
-
   dialBtn.disabled = false
 
   updateStatusBtn.disabled = true
@@ -182,33 +165,27 @@ function setDefault () {
 }
 
 function processResponse (responseText) {
-
   dialBtn.disabled = false
 
   updateStatusBtn.disabled = true
 
-  var dialJSON = undefined
+  var dialJSON
 
   try {
-
     dialJSON = JSON.parse(responseText)
-
   } catch (error) {
-
     updateStatusField('Response JSON not valid')
 
     return false
   }
 
   if (!dialJSON.uri && dialJSON.status) {
-
     updateStatusField(dialJSON.status)
 
     return false
   }
 
   if (dialJSON.status && dialJSON.uri && dialJSON.sid && dialJSON.subresource_uris.recordings) {
-
     dialBtn.disabled = true
 
     updateStatusBtn.disabled = false
@@ -220,24 +197,21 @@ function processResponse (responseText) {
     var s = dialJSON.status + '|' + dialJSON.sid + '|' + rootUrl + dialJSON.uri + '|' + rootUrl + dialJSON.subresource_uris.recordings
 
     setAnswer(s)
-
   } else {
-
     updateStatusField('Response not valid')
 
     setAnswer('Response not valid')
   }
 }
 
-//global function
+// global function
 function clearAnswer () {
-
-  //global
+  // global
   setAnswer('')
 
   setMetaData('')
 
-  //local
+  // local
   setDefault()
 }
 
