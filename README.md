@@ -6,7 +6,7 @@
 
 This plug-in allows for forms to launch outbound calls via [Twilio](https://twilio.com/). 
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip)
+[![Download now](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
 
 ## Features
 
@@ -20,10 +20,10 @@ To use the plug-in as-is, download the [twilio-call.fieldplugin.zip](https://git
 
 You may want to try using it in a simple example form first:
 
- * Download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip) plug-in package.
- * Download the [twilio-call-example.xlsx](https://github.com/surveycto/twilio-call/blob/master/extras/twilio-call-example.xlsx) example form.
+ * Download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true) plug-in package.
+ * Download the [twilio-call-example.xlsx](https://github.com/surveycto/twilio-call/blob/master/extras/sample-form/Twilio%20call%20sample%20form.xlsx?raw=true) example form.
  * Edit that example to change the two references to "+1" to be a plus followed by your current country code.
- * Download the [twilio_access.csv](https://github.com/surveycto/twilio-call/blob/master/extras/twilio_access.csv) dataset template.
+ * Download the <a id="raw-url" href="https://github.com/surveycto/twilio-call/raw/master/extras/sample-form/twilio_access.csv">twilio_access.csv</a> dataset template.
  * Edit that .csv template to add your Twilio `Account SID` and `Auth Token`, as well as one of your Twilio numbers into the *1234* row.
  * Upload the example form to your SurveyCTO server, attaching both the plug-in package and the .csv file (alternatively, upload the .csv into a dataset and attach that dataset).
  
