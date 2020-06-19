@@ -1,5 +1,5 @@
 {
-	"name" : "Twilio Dialer",
+	"name" : "Twilio call",
 	"author" : "Team SurveyCTO",
 	"version": "1.0.2",
 	"supportedFieldTypes": ["text"],
