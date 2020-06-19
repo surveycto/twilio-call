@@ -15,14 +15,14 @@ var twilioNumber = getPluginParameter('twilioNumber')
 var record = Number(getPluginParameter('record'))
 var displayNumber = Number(getPluginParameter('displayNumber'))
 
-//other variables
+// other variables
 var rootUrl = 'https://api.twilio.com'
 var callJSON
 
 // Define the dial function
-dialBtn.onclick = function () { dial(); }
+dialBtn.onclick = function () { dial() }
 
-updateStatusBtn.onclick = function () { updateStatus(); }
+updateStatusBtn.onclick = function () { updateStatus() }
 
 function makeHttpObject () {
   try {
@@ -82,17 +82,13 @@ function updateStatus () {
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
 
     request.onreadystatechange = function () {
-
       if (request.readyState === 4) {
-
         responseText = request.responseText
 
         if (!responseText) {
-
           updateStatusField('undefined error')
 
         } else {
-
           setMetaData(responseText)
 
           processResponse(responseText)
@@ -101,19 +97,15 @@ function updateStatus () {
     }
 
     request.send()
-
   } catch (error) {
-
     updateStatusField(error)
-
   }
 }
 
 function dial () {
-
   var responseText = ''
 
-  var request = undefined
+  var request
 
   var requestUrl = rootUrl + '/2010-04-01/Accounts/' + accountSID + '/Calls.json'
 
