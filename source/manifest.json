@@ -1,7 +1,7 @@
 {
 	"name" : "Twilio call",
 	"author" : "Team SurveyCTO",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"supportedFieldTypes": ["text"],
 	"hideDefaultRequiredMessage": false,
 	"hideDefaultConstraintMessage": false

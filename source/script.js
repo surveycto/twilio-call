@@ -196,7 +196,7 @@ function processResponse (responseText) {
 
     updateStatusField(dialJSON.status)
 
-    var s = dialJSON.status + '|' + dialJSON.sid + '|' + rootUrl + dialJSON.uri + '|' + rootUrl + dialJSON.subresource_uris.recordings
+    var s = dialJSON.status + '|' + dialJSON.sid + '|' + rootUrl + dialJSON.uri + '|' + (record === 0 ? '' : rootUrl + dialJSON.subresource_uris.recordings)
 
     setAnswer(s)
   } else {
