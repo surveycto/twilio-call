@@ -26,6 +26,8 @@ dialBtn.onclick = function () { dial() }
 
 updateStatusBtn.onclick = function () { updateStatus() }
 
+onLoad()
+
 function makeHttpObject () {
   try {
     return new XMLHttpRequest()
@@ -214,5 +216,3 @@ function clearAnswer () {
   // local
   setDefault()
 }
-
-onLoad()
