@@ -1,12 +1,12 @@
-# Twilio Calls
+# Twilio phone call
 
-![](extras/twilio-dialer.png)
+![](extras/twilio-call.png)
 
 ## Description
 
 This plug-in allows for forms to launch outbound calls via [Twilio](https://twilio.com/). 
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/scto-twilio-dialer/blob/master/twilio-dialer.fieldplugin.zip)
+[![Download now](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip)
 
 ## Features
 
@@ -16,14 +16,14 @@ This plug-in allows for forms to launch outbound calls via [Twilio](https://twil
 
 ## How to use
 
-To use the plug-in as-is, download the [twilio-dialer.fieldplugin.zip](https://github.com/surveycto/scto-twilio-dialer/blob/master/twilio-dialer.fieldplugin.zip) file from this repo, attach it to your form, and use it on one or more `text` fields. See below for a full list of required parameters.
+To use the plug-in as-is, download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip) file from this repo, attach it to your form, and use it on one or more `text` fields. See below for a full list of required parameters.
 
 You may want to try using it in a simple example form first:
 
- * Download the [twilio-dialer.fieldplugin.zip](https://github.com/surveycto/scto-twilio-dialer/blob/master/twilio-dialer.fieldplugin.zip) plug-in package.
- * Download the [scto-twilio-dialer-example.xlsx](https://github.com/surveycto/scto-twilio-dialer/blob/master/extras/scto-twilio-dialer-example.xlsx) example form.
+ * Download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip) plug-in package.
+ * Download the [twilio-call-example.xlsx](https://github.com/surveycto/twilio-call/blob/master/extras/twilio-call-example.xlsx) example form.
  * Edit that example to change the two references to "+1" to be a plus followed by your current country code.
- * Download the [twilio_access.csv](https://github.com/surveycto/scto-twilio-dialer/blob/master/extras/twilio_access.csv) dataset template.
+ * Download the [twilio_access.csv](https://github.com/surveycto/twilio-call/blob/master/extras/twilio_access.csv) dataset template.
  * Edit that .csv template to add your Twilio `Account SID` and `Auth Token`, as well as one of your Twilio numbers into the *1234* row.
  * Upload the example form to your SurveyCTO server, attaching both the plug-in package and the .csv file (alternatively, upload the .csv into a dataset and attach that dataset).
  
