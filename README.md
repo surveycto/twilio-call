@@ -16,11 +16,11 @@ This plug-in allows for forms to launch outbound calls via [Twilio](https://twil
 
 ## How to use
 
-To use the plug-in as-is, download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip) file from this repo, attach it to your form, and use it on one or more `text` fields. See below for a full list of required parameters.
+To use the plug-in as-is, download the [https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true) file from this repo, attach it to your form, and use it on one or more `text` fields. See below for a full list of required parameters.
 
 You may want to try using it in a simple example form first:
 
- * Download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip) plug-in package.
+ * Download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true) plug-in package.
  * Download the [twilio-call-example.xlsx](https://github.com/surveycto/twilio-call/blob/master/extras/sample-form/Twilio%20call%20sample%20form.xlsx?raw=true) example form.
  * Edit that example to change the two references to "+1" to be a plus followed by your current country code.
  * Download the [twilio_access.csv](https://github.com/surveycto/twilio-call/raw/master/extras/sample-form/twilio_access.csv) dataset template (right-click the link and click "Save link as").
