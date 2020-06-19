@@ -8,6 +8,10 @@ This plug-in allows for forms to launch outbound calls via [Twilio](https://twil
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
 
+## Warning: under active development
+
+*This plug-in is still under active development and piloting, and there is no easy way (yet!) to decrypt encrypted audio recordings.*
+
 ## Features
 
  * Supports the `text` field type, saving call status, unique Twilio call SID, Twilio details API URL, and Twilio recordings API URL in a |-separated list (use [item-at()](https://docs.surveycto.com/02-designing-forms/01-core-concepts/09.expressions.html#Help_Forms_item-at) to access each item).
