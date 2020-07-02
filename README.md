@@ -6,9 +6,7 @@
 
 This plug-in allows for forms to launch outbound calls via [Twilio](https://twilio.com/). 
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
-
-## Warning: under active development
+[![Under active development](extras/beta-release-download.jpg)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
 
 *This plug-in is still under active development and piloting, and there is no easy way (yet!) to decrypt encrypted audio recordings. If you're interested in piloting Twilio for CATI applications, please reach out to amrik@surveycto.com.*
 
