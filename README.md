@@ -6,7 +6,7 @@
 
 This plug-in allows for forms to launch outbound calls via [Twilio](https://twilio.com/).  
 
-The twilio-call field plug-in can be use when collecting data using [computer-assisted telephone interviewing (CATI)]([https://support.surveycto.com/hc/en-us/articles/360044958494](https://support.surveycto.com/hc/en-us/articles/360044958494)).
+The twilio-call field plug-in can be use when collecting data using [computer-assisted telephone interviewing (CATI)](https://support.surveycto.com/hc/en-us/articles/360044958494).
 
 [![Under active development](extras/beta-release-download.jpg)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
 
@@ -22,28 +22,24 @@ See [this blog post]([https://www.surveycto.com/blog/twilio-plug-in/](https://ww
 
 ## Data format
 This field plug-in supports the _text_ field type, and the data is stored in the field in a pipe-separated ("|") list. For example:
-
-	completed|call_id_123|https://api.twilio.com/2010-04-01/Accounts/	account_id_123/Calls/call_id_123.json|	https://api.twilio.com/2010-04-01/Accounts/account_id_123/Calls/call_id_123/Recordings.json
+	
+	completed|call_id_123|https://api.twilio.com/2010-04-01/Accounts/account_id_123/Calls/call_id_123.json|https://api.twilio.com/2010-04-01/Accounts/account_id_123/Calls/call_id_123/Recordings.json
 
 Retrieve the following items from this list using the [item-at()](https://docs.surveycto.com/02-designing-forms/01-core-concepts/09.expressions.html#Help_Forms_item-at) form function at these positions in the list:
 
 * 0 - The call status. e.g. "queued", "ringing", and "complete".
-* 1 - The [string identifier (SID)]([https://www.twilio.com/docs/glossary/what-is-a-sid](https://www.twilio.com/docs/glossary/what-is-a-sid)) for the call.
+* 1 - The [string identifier (SID)](https://www.twilio.com/docs/glossary/what-is-a-sid) for the call.
 * 2 - Twilio URL to the record of the call.
 * 3 - Twilio URL to the recording of the call (if enabled).
 
 ## How to use
 
-To use the plug-in as-is, download the [twilio-call.fieldplugin.zip](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true) file from this repo, attach it to your form, and use it on one or more `text` fields. See below for a full list of required parameters.
-
-You may want to try using it in a simple sample form first:
- 
 * Download the [sample form](https://github.com/surveycto/twilio-call/blob/master/extras/sample-form/Sample%20form%20-%20Twilio%20call%20field%20plug-in.xlsx?raw=true).
- * Download the [field plug-in](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)..
+ * Download the [field plug-in](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true).
  * Edit that sample to change the two references to "+1" to be a plus followed by your current country code.
  * Download the [twilio_access.csv](https://github.com/surveycto/twilio-call/raw/master/extras/sample-form/twilio_access.csv) dataset template (right-click the link, click *Save link as*, set format to *All Files*, add `.csv` to the file name, and save).
  * Edit that .csv template to add your Twilio `Account SID` and `Auth Token`, as well as one of your Twilio numbers into the *1234* row.
- * Upload the sample form to your SurveyCTO server, attaching both the plug-in package and the .csv file. Alternatively, upload the .csv into a dataset and attach that dataset (learn more about [pre-loading]([https://docs.surveycto.com/02-designing-forms/03-advanced-topics/03.preloading.html](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/03.preloading.html))).
+ * Upload the sample form to your SurveyCTO server, attaching both the plug-in package and the .csv file. Alternatively, upload the .csv into a dataset and attach that dataset (learn more about [pre-loading](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/03.preloading.html)).
  
 If you're new to Twilio, your free trial's home screen should include your trial Twilio number as well as your `Account SID` and `Auth Token`:
 
