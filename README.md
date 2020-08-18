@@ -76,13 +76,13 @@ The plug-in requires that you specify values for each of the following parameter
 
 ## More resources
 
-* **Sample form**
+* **Sample form** <br>
 You can find a form definition in this repo here: [extras/sample_form](https://github.com/surveycto/twilio-call/blob/master/extras/sample-form/Sample%20form%20-%20Twilio%20call%20field%20plug-in.xlsx?raw=true).
-* **Developer documentation**  
+* **Developer documentation** <br>
 Instructions and resources for developing your own field plug-ins.  
 [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
-* **User documentation**  
+* **User documentation** <br>
 How to get started using field plug-ins in your SurveyCTO form.  
 [https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html)
-* **SurveyCTO computer-assisted telephone interviewing (CATI) starter kit**
+* **SurveyCTO computer-assisted telephone interviewing (CATI) starter kit** <br>
 [https://support.surveycto.com/hc/en-us/articles/360044958494](https://support.surveycto.com/hc/en-us/articles/360044958494)
