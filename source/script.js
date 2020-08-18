@@ -9,13 +9,13 @@ var sidField = document.getElementById('sid')
 var statusField = document.getElementById('status')
 
 // References to values stored in the plug-in parameters
-var authToken = getPluginParameter('authToken')
-var accountSID = getPluginParameter('accountSID')
-var fromNumber = getPluginParameter('fromNumber')
-var toNumber = getPluginParameter('toNumber')
-var twilioNumber = getPluginParameter('twilioNumber')
+var authToken = getPluginParameter('auth_token')
+var accountSID = getPluginParameter('account_sid')
+var fromNumber = getPluginParameter('from_number')
+var toNumber = getPluginParameter('to_number')
+var twilioNumber = getPluginParameter('twilio_number')
 var record = Number(getPluginParameter('record'))
-var displayNumber = Number(getPluginParameter('displayNumber'))
+var displayNumber = Number(getPluginParameter('display_number'))
 
 // other variables
 var rootUrl = 'https://api.twilio.com'
