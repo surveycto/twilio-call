@@ -4,7 +4,9 @@
 
 ## Description
 
-This plug-in allows for forms to launch outbound calls via [Twilio](https://twilio.com/).  
+*This script is part of a series of tools for working with Twilio in SurveyCTO. To learn more, check out our support article on [using Twilio with SurveyCTO to securely record phone calls only with consent](https://support.surveycto.com/hc/en-us/articles/360055415333)*
+
+This plug-in allows for forms to launch outbound calls via Twilio.  
 
 The twilio-call field plug-in can be use when collecting data using [computer-assisted telephone interviewing (CATI)](https://support.surveycto.com/hc/en-us/articles/360044958494).
 
