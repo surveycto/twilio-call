@@ -71,3 +71,7 @@ You can follow these steps either using [SurveyCTO Collect](https://docs.surveyc
 1. You will get a message about how you are using a trial account. Wait for the message to end, then use the phone keypad to press any key. If you press any key before the message ends, the call will end without calling the other number. If you wait too long before pressing a key on the keypad, this will also cause the call to end without calling the other number. So, make sure you press a key on the keypad within a few seconds of the message ending. This will not be a concern if you upgrade to a paid Twilio account.
 1. The phone number entered for *Number to dial* will be called from your Twilio phone number. Answer that call. (That phone will not require pressing a key on the keypad to continue.)
 1. There will now be a connected call between those two phone numbers (or, if the *Your number* and *Number to dial* are the same, there will be two active calls on that phone to the same phone number). You can try talking (for testing recording), and then hang up when you are done.
+
+## Further reading
+
+To learn more about recording calls using Twilio, check out our support article on [Using Twilio with SurveyCTO to securely record phone calls only with consent](https://support.surveycto.com/hc/en-us/articles/360055415333).
