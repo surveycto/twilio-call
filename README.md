@@ -36,6 +36,8 @@ Retrieve the following items from this list using the [item-at()](https://docs.s
 
 ## How to use
 
+*If you would like more detailed steps, including on how to set up a Twilio account and phone number, check out [this guide](extras/detailed_steps.md).*
+
 * Download the [sample form](https://github.com/surveycto/twilio-call/blob/master/extras/sample-form/Sample%20form%20-%20Twilio%20call%20field%20plug-in.xlsx?raw=true).
  * Download the [field plug-in](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true).
  * Edit that sample to change the two references to "+1" to be a plus followed by your current country code.
