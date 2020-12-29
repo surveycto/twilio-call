@@ -1,10 +1,10 @@
 # Detailed step guide to the twilio-call field plug-in
 
-If you are brand new to Twilio, you can follow these steps to help get you set up. These steps go into deep detail on exactly what to do (which is why there are so may steps), so if you already have experience with CSV files and web applications, you may not need them, and the standard [readme](../README.md) should be enough. However, feel free to come back here at any time if you are running into trouble.
+If you are brand new to Twilio, you can follow these steps to help get you set up. These steps go into deep detail on exactly what to do (which is why there are so many steps), so if you already have experience with CSV files and web applications, you may not need them, and the standard [readme](../README.md) should be enough. However, feel free to come back here at any time if you are running into trouble.
 
 These steps were written in December 2020, but updates to Twilio may cause slight changes.
 
-## Create Twilo account
+## Create Twilio account
 
 1. Go to the [Twilio homepage](https://www.twilio.com/).
 1. In the upper-right, click *Sign up*.
@@ -24,7 +24,7 @@ These steps were written in December 2020, but updates to Twilio may cause sligh
 2. Decide on the phone number you would like to use, and click *Choose this Number*. (This cannot be changed under a trial account, but with a paid Twilio account, you can purchase additional phone numbers.)
 1. When the phone number has been added, click *Done* in the lower-right of the popup. The page will then refresh.
 
-### Set up and verify phone numbera
+### Set up and verify phone number
 
 On a trial account, you can only make calls to and call from verified phone numbers. You will need to verify each phone number you would like to use for testing. If you are already on a paid Twilio account (not on a free trial), you can skip these steps. The phone number you entered earlier when creating your account will already be verified. When testing, it is okay to make the phone number you are calling from and the phone number you are calling the same phone number (we'll explain more later), so for now, it is okay if you have only verified one phone number.
 
@@ -59,7 +59,7 @@ When under a trial account, both the phone number you are calling from and the p
 You can follow these steps either using [SurveyCTO Collect](https://docs.surveycto.com/03-collecting-data/01-mobile-data-collection/01.mobile-collect.html), [web forms](https://docs.surveycto.com/03-collecting-data/02-web-data-collection/01.web-forms.html), or the [test view](https://docs.surveycto.com/02-designing-forms/01-core-concepts/02c.testing-forms.html).
 
 1. Open the form.
-1. For *Number to dial*, enter the phone number you would to call.
+1. For *Number to dial*, enter the phone number you would like to call.
 1. For *Your number*, enter your own phone number.
 1. Select whether you would like to record the call, and whether the phone number will be displayed (in your actual form, these will likely be programmed into the form instead of chosen by the enumerator, but this is good for testing).
 1. At the popup asking to add a group, click *Add group*.
