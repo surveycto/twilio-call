@@ -74,4 +74,4 @@ You can follow these steps either using [SurveyCTO Collect](https://docs.surveyc
 
 ## Further reading
 
-To learn more about recording calls using Twilio, check out our support article on [Using Twilio with SurveyCTO to securely record phone calls only with consent](https://support.surveycto.com/hc/en-us/articles/360055415333).
+To learn more about recording calls using Twilio, check out our support article on [using Twilio with SurveyCTO to securely record phone calls only with consent](https://support.surveycto.com/hc/en-us/articles/360055415333).
