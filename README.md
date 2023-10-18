@@ -12,7 +12,7 @@ The twilio-call field plug-in can be use when collecting data using [computer-as
 
 [![Download](extras/download-button.png)](https://github.com/surveycto/twilio-call/blob/master/twilio-call.fieldplugin.zip?raw=true)
 
-*If you're interested in piloting Twilio for CATI applications, please reach out to support@surveycto.com.*
+*If you're interested in piloting Twilio for CATI applications, please reach out to plug-in-feedback@surveycto.com.*
 
 ## Features
 
